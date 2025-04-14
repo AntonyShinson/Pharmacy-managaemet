@@ -1,7 +1,7 @@
 CREATE DATABASE IF NOT EXISTS drugdatabase;
 USE drugdatabase;
 
--- Customers Table
+--Customers--
 CREATE TABLE IF NOT EXISTS Customers (
   C_Name TEXT NOT NULL,
   C_Password TEXT NOT NULL,
@@ -45,6 +45,6 @@ BEGIN
     SET D_Qty = D_Qty - NEW.O_Qty
     WHERE D_Name = NEW.O_Items;
 END;
-//
+
 
 DELIMITER ;
