@@ -115,7 +115,7 @@ def customer_dashboard(username):
     else:
         st.warning("No medicines available.")
 
-# Sidebar Menu
+# SIDEBAR
 menu = ["Login", "SignUp", "Admin"]
 choice = st.sidebar.selectbox("Menu", menu)
 
