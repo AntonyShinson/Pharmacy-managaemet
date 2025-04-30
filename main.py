@@ -58,7 +58,7 @@ def admin_page():
     meds = pd.read_sql_query("SELECT * FROM Drugs", conn)
     st.dataframe(meds)
 
-# User Authentication
+#Authentication(USER)
 def authenticate(username, password):
     c.execute('SELECT C_Password FROM Customers WHERE LOWER(C_Name) = LOWER(?)', (username,))
     result = c.fetchone()
