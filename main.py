@@ -73,7 +73,7 @@ def sign_up(username, password, email):
     except sqlite3.IntegrityError:
         st.error("Username or Email already exists. Please try another.")
 
-# Customer Dashboard
+# CUSTOMER DASHBOARD
 def customer_dashboard(username):
     st.title("Welcome to Your Dashboard")
     
