@@ -36,7 +36,7 @@ if "username" not in st.session_state:
 if "cart" not in st.session_state:
     st.session_state.cart = {}
 
-# Admin Page
+# ADMIN PAGE
 def admin_page():
     st.title("Admin Dashboard")
     
