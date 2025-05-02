@@ -28,7 +28,7 @@ c.execute('''CREATE TABLE IF NOT EXISTS Orders (
 
 conn.commit()
 
-# Initialize session state
+# INITIALIZE
 if "logged_in" not in st.session_state:
     st.session_state.logged_in = False
 if "username" not in st.session_state:
