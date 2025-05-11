@@ -6,7 +6,7 @@ import sqlite3
 conn = sqlite3.connect("drug_data.db", check_same_thread=False)
 c = conn.cursor()
 
-# Create table if it doesnot exist
+# Create table if it doesnot exist .
 c.execute('''CREATE TABLE IF NOT EXISTS Customers (
                 C_Name TEXT NOT NULL,
                 C_Password TEXT NOT NULL,
@@ -58,7 +58,7 @@ def admin_page():
     meds = pd.read_sql_query("SELECT * FROM Drugs", conn)
     st.dataframe(meds)
 
-#AUTHENTICATION-USER
+#AUTHENTICATION(user)
 def authenticate(username, password):
     c.execute('SELECT C_Password FROM Customers WHERE LOWER(C_Name) = LOWER(?)', (username,))
     result = c.fetchone()
@@ -73,7 +73,7 @@ def sign_up(username, password, email):
     except sqlite3.IntegrityError:
         st.error("Username or Email already exists. Please try another.")
 
-# Customer dashboard
+# CUSTOMER DASHBOARD
 def customer_dashboard(username):
     st.title("Welcome to Your Dashboard")
     
@@ -115,7 +115,7 @@ def customer_dashboard(username):
     else:
         st.warning("No medicines available.")
 
-# SIDEBAR
+# SIDEBAR IN UI
 menu = ["Login", "SignUp", "Admin"]
 choice = st.sidebar.selectbox("Menu", menu)
 
