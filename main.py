@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 import sqlite3
 
-# DATABASE CONNECTION CODE
+# Database connection code
 conn = sqlite3.connect("drug_data.db", check_same_thread=False)
 c = conn.cursor()
 
