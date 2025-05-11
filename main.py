@@ -6,7 +6,7 @@ import sqlite3
 conn = sqlite3.connect("drug_data.db", check_same_thread=False)
 c = conn.cursor()
 
-# CREATE TABLE IF DONT EXIST
+# Create the table if it doesnot exist
 c.execute('''CREATE TABLE IF NOT EXISTS Customers (
                 C_Name TEXT NOT NULL,
                 C_Password TEXT NOT NULL,
@@ -28,7 +28,7 @@ c.execute('''CREATE TABLE IF NOT EXISTS Orders (
 
 conn.commit()
 
-# INITIALIZE
+# Initialize
 if "logged_in" not in st.session_state:
     st.session_state.logged_in = False
 if "username" not in st.session_state:
@@ -58,7 +58,7 @@ def admin_page():
     meds = pd.read_sql_query("SELECT * FROM Drugs", conn)
     st.dataframe(meds)
 
-#Authentication(USER)
+#AUTHENTICATION-USER
 def authenticate(username, password):
     c.execute('SELECT C_Password FROM Customers WHERE LOWER(C_Name) = LOWER(?)', (username,))
     result = c.fetchone()
