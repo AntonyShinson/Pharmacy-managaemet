@@ -6,7 +6,7 @@ import sqlite3
 conn = sqlite3.connect("drug_data.db", check_same_thread=False)
 c = conn.cursor()
 
-# Create table if it doesnot exist .
+# CREATE TABLE IF IT DOESNT EXIST
 c.execute('''CREATE TABLE IF NOT EXISTS Customers (
                 C_Name TEXT NOT NULL,
                 C_Password TEXT NOT NULL,
