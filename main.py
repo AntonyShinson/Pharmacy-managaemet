@@ -29,7 +29,12 @@ c.execute('''CREATE TABLE IF NOT EXISTS Orders (
 conn.commit()
 
 # INITIALIZE
-
+if "logged_in" not in st.session_state:
+    st.session_state.logged_in = False
+if "username" not in st.session_state:
+    st.session_state.username = ""
+if "cart" not in st.session_state:
+    st.session_state.cart = {}
 
 # ADMIN PAGE
 def admin_page():
