@@ -59,10 +59,6 @@ def admin_page():
     st.dataframe(meds)
 
 #AUTHENTICATION-user
-def authenticate(username, password):
-    c.execute('SELECT C_Password FROM Customers WHERE LOWER(C_Name) = LOWER(?)', (username,))
-    result = c.fetchone()
-    return result is not None and result[0] == password
 
 def sign_up(username, password, email):
     try:
