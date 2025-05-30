@@ -1,7 +1,6 @@
 import streamlit as st
 import pandas as pd
 import sqlite3
-#Hello
 # DATABASE CONNECTION CODE
 conn = sqlite3.connect("drug_data.db", check_same_thread=False)
 c = conn.cursor()
