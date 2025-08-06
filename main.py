@@ -1,7 +1,7 @@
 import streamlit as st
 import pandas as pd
 import sqlite3
-# xcaxczxzxczasdasd asdasda adasdas dasdasdas dasasc
+# asdasdcas aacsadc asdcasdcs adcasdasd
 conn = sqlite3.connect("drug_data.db", check_same_thread=False)
 c = conn.cursor()
 
@@ -136,6 +136,7 @@ elif choice == "Admin":
 
 if "logged_in" in st.session_state and st.session_state.logged_in:
     customer_dashboard(st.session_state.username)
+
 
 
 
